@@ -30,8 +30,7 @@ class JobFormRequest extends FormRequest
             'company_name' => "required",
             'job_link' => "required|url",
             'tags' => "exists:tags,id",
-            'highlited' => "boolean",
-            'pinned' => "boolean"
+            
         ];
     }
 }

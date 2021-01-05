@@ -38,7 +38,16 @@ class JobController extends Controller
 
     public function store(JobFormRequest $request)
     {
-    	$job = Job::create($request->only('user_id', 'job_title', 'job_location', 'job_link', 'company_name', 'company_logo', 'highlited', 'pinned' ));
+    	$job = Job::create([
+    	    		'user_id' => $request->user_id,
+    	            'job_title' => $request->job_title,
+    	            'job_location' => $request->job_location,
+    	            'company_name' => $request->company_name,
+    	            'job_link' => $request->company_name,
+    	            'company_logo' => $request->company_logo ?: 'https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/no.png',
+    	            'highlited' => $request->highlited ?: false ,
+    	            'pinned' => $request->pinned ?: false
+    	    	]);
 
     	$job->tags()->attach($request->tags);
 

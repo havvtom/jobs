@@ -26,7 +26,8 @@ class JobResource extends JsonResource
             'job_link' => $this->job_link,
             'tags' => new TagResourceCollection($this->tags),
             'highlited' => $this->highlited,
-            'pinned' => $this->pinned
+            'pinned' => $this->pinned,
+            'updated_at' => $this->updated_at
         ];
     }
 }

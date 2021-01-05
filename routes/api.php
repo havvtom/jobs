@@ -19,7 +19,9 @@ Route::get('jobs', [JobController::class, 'index']);
 Route::get('jobs/{job}', [JobController::class, 'show']);
 Route::post('jobs', [JobController::class, 'store']);
 Route::patch('jobs/{job}', [JobController::class, 'update']);
+
 Route::get('tags', [TagController::class, 'index']);
+Route::post('tags', [TagController::class, 'store']);
 Route::get('tags/{tag}', [TagController::class, 'show']);
 
 Route::post('user', [UserController::class, 'store']);

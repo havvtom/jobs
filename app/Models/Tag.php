@@ -9,6 +9,10 @@ class Tag extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
+    protected $touches = ['jobs'];
+
     public function getRouteKeyName()
     {
     	return 'slug';
